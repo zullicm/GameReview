@@ -7,8 +7,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/reviews" do
+    reviews = Review.all
+    reviews.to_json
+  end
 
-    { message: "Main" }.to_json
+  get "/users" do
+    users = User.all
+    users.to_json
+  end
+
+  get "/movies" do
+    movies = Movie.all
+    movies.to_json
   end
 
 end
