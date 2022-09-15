@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2022_09_15_193901) do
 
   create_table "movies", force: :cascade do |t|
     t.string "name"
-    t.float "avg_rating"
+    t.integer "rating"
   end
 
   create_table "reviews", force: :cascade do |t|

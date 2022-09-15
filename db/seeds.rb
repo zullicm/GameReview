@@ -6,8 +6,7 @@ puts "🌱 Seeding spices..."
   # create a game with random data
   Movie.create(
     name: Faker::Movie.title,
-    genre: Faker::Movie.genre,
-    platform: Faker::Movie.platform,
+    rating: Faker::Movie.platform,
   )
 end
 
