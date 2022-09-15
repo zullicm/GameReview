@@ -3,7 +3,6 @@ class CreateMovie < ActiveRecord::Migration[6.1]
     create_table :movies do |t|
       t.string :name
       t.float :avg_rating
-      t.string :genre
     end
   end
 end

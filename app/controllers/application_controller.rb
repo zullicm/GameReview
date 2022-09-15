@@ -6,4 +6,9 @@ class ApplicationController < Sinatra::Base
     { message: "Main" }.to_json
   end
 
+  get "/reviews" do
+
+    { message: "Main" }.to_json
+  end
+
 end

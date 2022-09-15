@@ -4,6 +4,7 @@
  ### Requierments
  * ruby 2.7.4p191
  * sqlite 3.31.1
+ 
 
  ### how to use
  fork and clone 
