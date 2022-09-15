@@ -4,5 +4,6 @@ class Movie < ActiveRecord::Migration[6.1]
       t.string :name
       t.float :avg_rating
       t.string :genre
+    end
   end
 end

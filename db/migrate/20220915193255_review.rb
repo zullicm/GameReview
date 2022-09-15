@@ -3,5 +3,6 @@ class Review < ActiveRecord::Migration[6.1]
     create_table :reviews do |t|
       t.string :comment
       t.integer :rating
+    end
   end
 end
