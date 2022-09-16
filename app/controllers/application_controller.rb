@@ -21,4 +21,15 @@ class ApplicationController < Sinatra::Base
     movies.to_json
   end
 
+  # main page displays movies by there age in order, displays 3 reviews
+
+
+  # get a specifc movie for the movie page, has reviews
+  get "/movie/:id" do
+    movie = Movie.find(params[:id])
+    movie.to_json(include: { reviews: { include: :user } })
+  end
+
+
+
 end
