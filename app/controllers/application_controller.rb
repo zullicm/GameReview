@@ -16,13 +16,13 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+
+
+  # main page displays movies by there age in order, click button to see reviews
   get "/movies" do
-    movies = Movie.all
+    movies = Movie.all.order(created_at: :ASC)
     movies.to_json
   end
-
-  # main page displays movies by there age in order, displays 3 reviews
-
 
   # get a specifc movie for the movie page, has reviews
   get "/movie/:id" do
