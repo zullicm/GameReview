@@ -4,130 +4,137 @@ puts "🌱 Seeding spices..."
 # Seed your database here
 
 # Movies
-Movie.create(
-  name: "Braveheart"
+braveheart = Movie.create(
+  name: "Braveheart",
+  image: "https://images-na.ssl-images-amazon.com/images/I/81dqgVudIDL._RI_.jpg"
 )
-Movie.create(
-  name: "Star Wars"
+starwars = Movie.create(
+  name: "Star Wars",
+  image: "https://static.wikia.nocookie.net/starwars/images/c/cc/Star-wars-logo-new-tall.jpg/revision/latest?cb=20190313021755"
 )
-Movie.create(
-  name: "Toy Story"
+toystory = Movie.create(
+  name: "Toy Story",
+  image: "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg"
 )
-Movie.create(
-  name: "Jaws"
+jaws = Movie.create(
+  name: "Jaws",
+  image: "https://resizing.flixster.com/9ulMcbVWtxvAW4so_JAhh75_cQE=/206x305/v2/https://flxt.tmsimg.com/assets/p8174_p_v8_ai.jpg"
 )
-Movie.create(
-  name: "The Avengers"
+theavengers = Movie.create(
+  name: "The Avengers",
+  image: "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg"
 )
 
 # Users
-User.create(
+erika = User.create(
   name: "Erika"
 )
-User.create(
+chris = User.create(
   name: "Chris"
 )
-User.create(
+rayannan = User.create(
   name: "Rayannan"
 )
-User.create(
+trevor = User.create(
   name: "Trevor"
 )
-User.create(
-  name: "Eric"
-)
-User.create(
+steve = User.create(
   name: "Steve"
 )
-User.create(
+jim = User.create(
   name: "Jim"
 )
 
 # Reviews
 
-#ERIKA
-Review.create(
+#ERIKA----------------------------------
+erikaone = Review.create(
   comment: "Fun movie for the kids",
-  rating: 7,
-  user_id: 1,
-  movie_id: 3
+  rating: 7
 )
+erikaone.user_id = erika.id
+erikaone.movie_id = toystory.id
 
-Review.create(
+erikatwo = Review.create(
   comment: "Not a fan of scifi",
-  rating: 3,
-  user_id: 1,
-  movie_id: 2
+  rating: 3
 )
+erikatwo.user_id = erika.id
+erikatwo.movie_id = starwars.id
 
-#CHRIS
-Review.create(
+#CHRIS----------------------------------
+chrisone = Review.create(
   comment: "Coolish",
-  rating: 7,
-  user_id: 2,
-  movie_id: 2
+  rating: 7
 )
-Review.create(
+chrisone.user_id = chris.id
+chrisone.movie_id = starwars.id
+
+christwo = Review.create(
   comment: "Not as scary as people say",
-  rating: 4,
-  user_id: 2,
-  movie_id: 4
+  rating: 4
 )
+christwo.user_id = chris.id
+christwo.movie_id = jaws.id
 
-#RAYANNAN
-Review.create(
+#RAYANNAN----------------------------------
+rayone = Review.create(
   comment: "Love scary ocean movies",
-  rating: 8,
-  user_id: 3,
-  movie_id: 4
+  rating: 8
 )
-Review.create(
+rayone.user_id = rayannan.id
+rayone.movie_id = jaws.id
+
+raytwo = Review.create(
   comment: "Alright, action movies aren't my cup of tea",
-  rating: 5,
-  user_id: 3,
-  movie_id: 5
+  rating: 5
 )
+raytwo.user_id = rayannan.id
+raytwo.movie_id = theavengers.id
 
-#TREVOR
-Review.create(
+#TREVOR----------------------------------
+trevone = Review.create(
   comment: "Really like super heros",
-  rating: 8,
-  user_id: 4,
-  movie_id: 5
+  rating: 8
 )
-Review.create(
+trevone.user_id = trevor.id
+trevone.movie_id = theavengers.id
+
+trevtwo = Review.create(
   comment: "Too old for my taste",
-  rating: 3,
-  user_id: 4,
-  movie_id: 4
+  rating: 3
 )
+trevtwo.user_id = trevor.id
+trevtwo.movie_id = jaws.id
 
-#STEVE
-Review.create(
+#STEVE----------------------------------
+steveone = Review.create(
   comment: "Cool war movie",
-  rating: 8,
-  user_id: 4,
-  movie_id: 1
+  rating: 8
 )
-Review.create(
+steveone.user_id = steve.id
+steveone.movie_id = theavengers.id
+
+stevetwo = Review.create(
   comment: "Wholesome I guess",
-  rating: 6,
-  user_id: 4,
-  movie_id: 3
+  rating: 6
 )
+stevetwo.user_id = steve.id
+stevetwo.movie_id = braveheart.id
 
 
-#JIM
-Review.create(
+#JIM----------------------------------
+jimone = Review.create(
   comment: "A classic",
-  rating: 7,
-  user_id: 3,
-  movie_id: 4
+  rating: 7
 )
-Review.create(
+jimone.user_id = jim.id
+jimone.movie_id = jaws.id
+
+jimtwo = Review.create(
   comment: "Another classic",
-  rating: 6,
-  user_id: 3,
-  movie_id: 3
+  rating: 6
 )
+jimtwo.user_id = jim.id
+jimtwo.movie_id = toystory.id
 puts "✅ Done seeding!"
