@@ -30,6 +30,11 @@ class ApplicationController < Sinatra::Base
     movie.to_json(include: { reviews: { include: :user } })
   end
 
+  get "/reviews/:movie_id" do
+    reviews = Review.find_by(params[:movie_id])
+    reviews.to_json(include: :user)
+  end
+
 
 
 end

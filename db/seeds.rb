@@ -10,7 +10,7 @@ braveheart = Movie.create(
 )
 starwars = Movie.create(
   name: "Star Wars",
-  image: "https://static.wikia.nocookie.net/starwars/images/c/cc/Star-wars-logo-new-tall.jpg/revision/latest?cb=20190313021755"
+  image: "https://images-na.ssl-images-amazon.com/images/I/513N-LAqwFL.jpg"
 )
 toystory = Movie.create(
   name: "Toy Story",
@@ -26,115 +26,115 @@ theavengers = Movie.create(
 )
 
 # Users
-erika = User.create(
-  name: "Erika"
-)
-chris = User.create(
-  name: "Chris"
-)
-rayannan = User.create(
-  name: "Rayannan"
-)
-trevor = User.create(
-  name: "Trevor"
-)
-steve = User.create(
-  name: "Steve"
-)
-jim = User.create(
-  name: "Jim"
-)
+# erika = User.create(
+#   name: "Erika"
+# )
+# chris = User.create(
+#   name: "Chris"
+# )
+# rayannan = User.create(
+#   name: "Rayannan"
+# )
+# trevor = User.create(
+#   name: "Trevor"
+# )
+# steve = User.create(
+#   name: "Steve"
+# )
+# jim = User.create(
+#   name: "Jim"
+# )
 
-# Reviews
+# # Reviews
 
-#ERIKA----------------------------------
-erikaone = Review.create(
-  comment: "Fun movie for the kids",
-  rating: 7
-)
-erikaone.user_id = erika.id
-erikaone.movie_id = toystory.id
+# #ERIKA----------------------------------
+# erikaone = Review.create(
+#   comment: "Fun movie for the kids",
+#   rating: 7
+# )
+# erikaone.user_id = erika.id
+# erikaone.movie_id = toystory.id
 
-erikatwo = Review.create(
-  comment: "Not a fan of scifi",
-  rating: 3
-)
-erikatwo.user_id = erika.id
-erikatwo.movie_id = starwars.id
+# erikatwo = Review.create(
+#   comment: "Not a fan of scifi",
+#   rating: 3
+# )
+# erikatwo.user_id = erika.id
+# erikatwo.movie_id = starwars.id
 
-#CHRIS----------------------------------
-chrisone = Review.create(
-  comment: "Coolish",
-  rating: 7
-)
-chrisone.user_id = chris.id
-chrisone.movie_id = starwars.id
+# #CHRIS----------------------------------
+# chrisone = Review.create(
+#   comment: "Coolish",
+#   rating: 7
+# )
+# chrisone.user_id = chris.id
+# chrisone.movie_id = starwars.id
 
-christwo = Review.create(
-  comment: "Not as scary as people say",
-  rating: 4
-)
-christwo.user_id = chris.id
-christwo.movie_id = jaws.id
+# christwo = Review.create(
+#   comment: "Not as scary as people say",
+#   rating: 4
+# )
+# christwo.user_id = chris.id
+# christwo.movie_id = jaws.id
 
-#RAYANNAN----------------------------------
-rayone = Review.create(
-  comment: "Love scary ocean movies",
-  rating: 8
-)
-rayone.user_id = rayannan.id
-rayone.movie_id = jaws.id
+# #RAYANNAN----------------------------------
+# rayone = Review.create(
+#   comment: "Love scary ocean movies",
+#   rating: 8
+# )
+# rayone.user_id = rayannan.id
+# rayone.movie_id = jaws.id
 
-raytwo = Review.create(
-  comment: "Alright, action movies aren't my cup of tea",
-  rating: 5
-)
-raytwo.user_id = rayannan.id
-raytwo.movie_id = theavengers.id
+# raytwo = Review.create(
+#   comment: "Alright, action movies aren't my cup of tea",
+#   rating: 5
+# )
+# raytwo.user_id = rayannan.id
+# raytwo.movie_id = theavengers.id
 
-#TREVOR----------------------------------
-trevone = Review.create(
-  comment: "Really like super heros",
-  rating: 8
-)
-trevone.user_id = trevor.id
-trevone.movie_id = theavengers.id
+# #TREVOR----------------------------------
+# trevone = Review.create(
+#   comment: "Really like super heros",
+#   rating: 8
+# )
+# trevone.user_id = trevor.id
+# trevone.movie_id = theavengers.id
 
-trevtwo = Review.create(
-  comment: "Too old for my taste",
-  rating: 3
-)
-trevtwo.user_id = trevor.id
-trevtwo.movie_id = jaws.id
+# trevtwo = Review.create(
+#   comment: "Too old for my taste",
+#   rating: 3
+# )
+# trevtwo.user_id = trevor.id
+# trevtwo.movie_id = jaws.id
 
-#STEVE----------------------------------
-steveone = Review.create(
-  comment: "Cool war movie",
-  rating: 8
-)
-steveone.user_id = steve.id
-steveone.movie_id = theavengers.id
+# #STEVE----------------------------------
+# steveone = Review.create(
+#   comment: "Cool war movie",
+#   rating: 8
+# )
+# steveone.user_id = steve.id
+# steveone.movie_id = theavengers.id
 
-stevetwo = Review.create(
-  comment: "Wholesome I guess",
-  rating: 6
-)
-stevetwo.user_id = steve.id
-stevetwo.movie_id = braveheart.id
+# stevetwo = Review.create(
+#   comment: "Wholesome I guess",
+#   rating: 6
+# )
+# stevetwo.user_id = steve.id
+# stevetwo.movie_id = braveheart.id
 
 
-#JIM----------------------------------
-jimone = Review.create(
-  comment: "A classic",
-  rating: 7
-)
-jimone.user_id = jim.id
-jimone.movie_id = jaws.id
+# #JIM----------------------------------
+# jimone = Review.create(
+#   comment: "A classic",
+#   rating: 7
+# )
+# jimone.user_id = jim.id
+# jimone.movie_id = jaws.id
 
-jimtwo = Review.create(
-  comment: "Another classic",
-  rating: 6
-)
-jimtwo.user_id = jim.id
-jimtwo.movie_id = toystory.id
+# jimtwo = Review.create(
+#   comment: "Another classic",
+#   rating: 6
+# )
+# jimtwo.user_id = jim.id
+# jimtwo.movie_id = toystory.id
 puts "✅ Done seeding!"
