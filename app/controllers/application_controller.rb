@@ -11,10 +11,7 @@ class ApplicationController < Sinatra::Base
     reviews.to_json
   end
 
-  get "/users" do
-    users = User.all
-    users.to_json
-  end
+
 
 
 
@@ -29,13 +26,13 @@ class ApplicationController < Sinatra::Base
     movie = Movie.find(params[:id])
     movie.to_json(include: { reviews: { include: :user } })
   end
-
+#  Reviews -------------------------------------------------------
   get "/reviews/:movie_id" do
     reviews = Review.find_by(params[:movie_id])
     reviews.to_json(include: :user)
   end
 
-  post '/reviews' do
+  post '/newreview' do
     review = Review.create(
       rating: params[:rating],
       comment: params[:comment],
@@ -44,12 +41,24 @@ class ApplicationController < Sinatra::Base
     )
     review.to_json
   end
+# User --------------------------------------------------------
+
+  get "/users" do
+    users = User.all
+    users.to_json
+  end
+
+  get "/user/:name" do
+    users = User.all.order(name: :DESC)
+    user = users.find_by(name: params[:name])
+    user.to_json
+  end
 
   post '/newuser' do
     user = User.create(
       name: params[:name]
     )
-    review.to_json
+    user.to_json
   end
 
   delete '/deleteuser/:id' do
@@ -60,3 +69,4 @@ class ApplicationController < Sinatra::Base
 
 
 end
+
