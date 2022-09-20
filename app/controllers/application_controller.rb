@@ -35,6 +35,28 @@ class ApplicationController < Sinatra::Base
     reviews.to_json(include: :user)
   end
 
+  post '/reviews' do
+    review = Review.create(
+      rating: params[:rating],
+      comment: params[:comment],
+      user_id: params[:user_id],
+      movie_id: params[:movie_id]
+    )
+    review.to_json
+  end
+
+  post '/newuser' do
+    user = User.create(
+      name: params[:name]
+    )
+    review.to_json
+  end
+
+  delete '/deleteuser/:id' do
+    user = User.find(params[:id])
+    user.destroy
+    user.to_json
+  end
 
 
 end
