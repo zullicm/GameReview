@@ -28,7 +28,8 @@ class ApplicationController < Sinatra::Base
   end
 #  Reviews -------------------------------------------------------
   get "/reviews/:movie_id" do
-    reviews = Review.find_by(params[:movie_id])
+    reviews = Review.all
+    
     reviews.to_json(include: :user)
   end
 
@@ -51,6 +52,11 @@ class ApplicationController < Sinatra::Base
   get "/user/:name" do
     users = User.all.order(name: :DESC)
     user = users.find_by(name: params[:name])
+    user.to_json
+  end
+
+  get "/userbyid/:id" do
+    user = User.find(params[:id])
     user.to_json
   end
 
