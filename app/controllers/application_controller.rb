@@ -31,12 +31,13 @@ class ApplicationController < Sinatra::Base
 
   #  Reviews -------------------------------------------------------
   
-  get "/reviews" do
+  get "/reviews/:movie_id" do
     reviews = Review.all
-    reviews.to_json(include: :user)
+    reviewMovie = reviews.where(movie_id: params[:movie_id])
+    reviewMovie.to_json(include: :user)
   end
 
-  get "/reviews/:movie_id" do
+  get "/reviewavg/:movie_id" do
     reviews = Review.all
     reviewMovie = reviews.where(movie_id: params[:movie_id])
     movieAvg = reviewMovie.average(:rating)
