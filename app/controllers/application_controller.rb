@@ -17,7 +17,8 @@ class ApplicationController < Sinatra::Base
   # get a specifc movie for the movie page, has reviews
   get "/movie/:id" do
     movie = Movie.find(params[:id])
-    movie.to_json(include: { reviews: { include: :user } })
+    movieReviews = Movie[:reviews]
+    movieReviews.to_json
   end
 
   post "/addmovie" do
@@ -32,12 +33,14 @@ class ApplicationController < Sinatra::Base
   
   get "/reviews" do
     reviews = Review.all
-    reviews.to_json
+    reviews.to_json(include: :user)
   end
 
   get "/reviews/:movie_id" do
     reviews = Review.all
-    reviews.to_json(include: :user)
+    reviewMovie = reviews.where(movie_id: params[:movie_id])
+    movieAvg = reviewMovie.average(:rating)
+    movieAvg.to_json
   end
 
   post '/newreview' do
