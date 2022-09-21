@@ -73,6 +73,11 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+  get "/userreviews/:id" do
+    users = User.find(params[:id])
+    users.to_json(include: :reviews)
+  end
+
   get "/user/:name" do
     users = User.all.order(name: :DESC)
     user = users.find_by(name: params[:name])
