@@ -84,7 +84,7 @@ class ApplicationController < Sinatra::Base
 
   get "/userreviews/:id" do
     users = User.find(params[:id])
-    users.to_json(include: :reviews)
+    users.to_json(include: { reviews: { include: :movie } })
   end
 
   get "/user/:name" do
