@@ -6,30 +6,37 @@ class ApplicationController < Sinatra::Base
     { message: "Main" }.to_json
   end
 
-  get "/reviews" do
-    reviews = Review.all
-    reviews.to_json
-  end
-
-
-
-
+  # Movies ------------------------------------------------------
 
   # main page displays movies by there age in order, click button to see reviews
   get "/movies" do
     movies = Movie.all.order(created_at: :ASC)
     movies.to_json(include: { reviews: { include: :user } })
   end
-
+  
   # get a specifc movie for the movie page, has reviews
   get "/movie/:id" do
     movie = Movie.find(params[:id])
     movie.to_json(include: { reviews: { include: :user } })
   end
-#  Reviews -------------------------------------------------------
+
+  post "/addmovie" do
+    movie = Movie.create(
+      name: params[:name],
+      image: params[:image]
+    )
+    movie.to_json
+  end
+
+  #  Reviews -------------------------------------------------------
+  
+  get "/reviews" do
+    reviews = Review.all
+    reviews.to_json
+  end
+
   get "/reviews/:movie_id" do
     reviews = Review.all
-    
     reviews.to_json(include: :user)
   end
 
