@@ -60,10 +60,10 @@ class ApplicationController < Sinatra::Base
     review.to_json
   end
 
-  patch '/review/:id' do
+  patch '/reviewpatch/:id' do
     review = Review.find(params[:id])
     review.update(
-      rate: params[:rate],
+      rating: params[:rating],
       comment: params[:comment]
     )
     review.to_json
