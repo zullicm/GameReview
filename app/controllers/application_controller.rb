@@ -60,6 +60,15 @@ class ApplicationController < Sinatra::Base
     review.to_json
   end
 
+  patch '/review/:id' do
+    review = Review.find(params[:id])
+    review.update(
+      rate: params[:rate],
+      comment: params[:comment]
+    )
+    review.to_json
+  end
+
   delete '/deletereview/:id' do
     review = Review.find(params[:id])
     review.destroy
